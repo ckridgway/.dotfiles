@@ -3,3 +3,10 @@
 # Use this file purely for setting the terminal type and running
 # external commands like (fortune, msgs, etc).
 
+#------------------------------------------------------------------------------
+# Import topical .zlogin files.                                               
+#------------------------------------------------------------------------------
+for x in $(find ~/.dotfiles -name ".zlogin" -depth 2)
+do
+	source $x
+done

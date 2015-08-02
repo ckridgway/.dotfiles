@@ -50,4 +50,10 @@ alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias h="history"
 
-
+#------------------------------------------------------------------------------
+# Import topical .zshrc files.                                               
+#------------------------------------------------------------------------------
+for x in $(find ~/.dotfiles -name ".zshrc" -depth 2)
+do
+	source $x
+done

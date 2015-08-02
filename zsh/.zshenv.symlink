@@ -7,7 +7,7 @@
 # .zshrc - is for aliases, functions, options, key bindings, etc.
 # .zlogin - is for setting the terminal type and running commands.
 
-PATH=~/.dotfiles/bin:~/.pub-cache/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
+PATH=~/bin:~/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 
 # Setup pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
@@ -18,3 +18,10 @@ PATH=~/.dotfiles/bin:~/.pub-cache/bin:/usr/local/bin:/usr/local/sbin:/usr/local/
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+#------------------------------------------------------------------------------
+# Import topical .zshenv files.                                               
+#------------------------------------------------------------------------------
+for x in $(find ~/.dotfiles -name ".zshenv" -depth 2)
+do
+	source $x
+done
