@@ -1,3 +1,13 @@
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme bureau
+antigen apply
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,11 +15,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    ZSH_THEME="robbyrussell"  
-else
-    ZSH_THEME="ridgway"
-fi
+ZSH_THEME="bureau"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -29,31 +35,23 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial svn sublime)
+plugins=(
+    git 
+    mercurial
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
+
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------------------------------
-# My Standard Stuff
+# My Stuff
 # -----------------------------------------------------------------------------
 
-if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
-    # Enable Powerline prompt
-    source /usr/local//lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
-# Disable virtualenv prompt since powerline also displays it.
-export VIRTUAL_ENV_DISABLE_PROMPT=true
+# .dotfile management - see https://github.com/ckridgway/.dotfiles
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Setup aliases
-alias subl="sublime"
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
 alias h="history"
-
-#------------------------------------------------------------------------------
-# Import topical .zshrc files.                                               
-#------------------------------------------------------------------------------
-for x in $(find ~/.dotfiles -name ".zshrc" -depth 2)
-do
-	source $x
-done

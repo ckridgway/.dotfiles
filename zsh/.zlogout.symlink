@@ -1,9 +1,0 @@
-# Run upon exit of the zsh shell.
-
-#------------------------------------------------------------------------------
-# Import topical .zlogout files.                                               
-#------------------------------------------------------------------------------
-for x in $(find ~/.dotfiles -name ".zlogout" -depth 2)
-do
-	source $x
-done

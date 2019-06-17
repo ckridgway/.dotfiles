@@ -1,9 +1,0 @@
-# See .zshenv for zsh startup order information.
-
-#------------------------------------------------------------------------------
-# Import topical .zprofile files.                                               
-#------------------------------------------------------------------------------
-for x in $(find ~/.dotfiles -name ".zprofile" -depth 2)
-do
-	source $x
-done

@@ -10,3 +10,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias h="history"
 
+
+# .dotfile management - see https://github.com/ckridgway/.dotfiles
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"

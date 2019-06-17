@@ -1,50 +1,29 @@
 # Introduction
-This is my dofiles bootstrapper. It sets up my user account on new OSX and Linux based PCs just the way I want. 
+This is my dofiles bootstrapper. It uses git to manage dotfiles. Branches are used for different machine and os configurations.
 
 ### WARNING
 I haven't really tested this much on Linux at this time, just OSX.
 
 # Install
 Run:
-
-```
-  git clone https://github.com/ckridgway/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
-  ./bootstrap.sh
+```zsh
+curl -Lks https://github.com/ckridgway/dotfiles.git/.dotfiles_support/bootstrap.sh | sh
 ```
 
 This will:
-  - Install favorite packages appropriate for OS
-  - Setup my environment with my most important settings
-  - Backup any replaced files into `~/.dotfiles/backup/<Date+Time>`
-
-# Conventions
-## Topics
-The directory structure is topical.  
-  
-## File Extensions
-Files with the following extensions have special meaning:
-  - `.symlink` files are symlinked into `~`
-  - `.copy` files are copied into `~`
-  - `.bin` files are copied into `~/bin`
-  - `.install` files are installed via the OS appropriate package manager
-
-File extensions can include OS filters that restrict it to a specific OS. These take the following form:
-```
-  <name>.<operation>[-<os>]
-```
-where:
-  - `name` is a filename or package name
-  - `operation` is what to do (`symlink`, `copy`, `bin`, `install`)
-  - `os` restricts the operation to the specified OS (`osx` or `linux)
-examples:
-```
-  zsh.install           # install on all OSes
-  zsh.install-osx       # install only on OSX
-  .zshrc.symlink        # symlink .zshrc.symlink into ~ as .zshrc
-  .zshrc.copy-linux     # copy .zshrc.symlink into ~ as .zshrc
-```
+  - install dependencies (brew, git, curl, wget)
+  - setup config alias
+  - clone .dotfiles to `$HOME/.dotfiles`
+  - checkout working copy to $HOME
+  - backup any replaced files into `$HOME/.dotfiles_backup/<Date+Time>`
 
 # Credits
-  - [GitHub Dotfiles](https://dotfiles.github.io/) for introducing the concept of managed dotfiles
-  - [Zach Holman](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/) for the topical organization idea and some other ideas.
+  - [GitHub Dotfiles]() for introducing the concept of managed dotfiles
+  - [Nicola Paolucci]() for his cfg project and [article]() on Atlassian tutorials
+  - [StreakyCobra]() for describing his setup on Hacker News
+
+[GitHub Dotfiles]: https://dotfiles.github.io/                     
+[Nicola Paolucci]: https://bitbucket.org/durdn/cfg/src/master/     
+[tutorial]: https://www.atlassian.com/git/tutorials/dotfiles
+[StreakyCobra]: https://news.ycombinator.com/item?id=11071754
+[article]: https://www.atlassian.com/git/tutorials/dotfiles
