@@ -7,7 +7,7 @@ I haven't really tested this much on Linux at this time, just OSX.
 # Install
 Run:
 ```zsh
-curl -Lks https://raw.githubusercontent.com/ckridgway/.dotfiles/master/.dotfiles_bootstrap/bootstrap.sh | sh
+curl -Lks https://git.io/fja4U | sh
 ```
 
 This will:
