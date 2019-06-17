@@ -7,7 +7,7 @@ I haven't really tested this much on Linux at this time, just OSX.
 # Install
 Run:
 ```zsh
-curl -Lks https://github.com/ckridgway/dotfiles.git/.dotfiles_support/bootstrap.sh | sh
+curl -Lks https://raw.githubusercontent.com/ckridgway/.dotfiles/master/.dotfiles_bootstrap/bootstrap.sh | sh
 ```
 
 This will:
@@ -18,12 +18,6 @@ This will:
   - backup any replaced files into `$HOME/.dotfiles_backup/<Date+Time>`
 
 # Credits
-  - [GitHub Dotfiles]() for introducing the concept of managed dotfiles
-  - [Nicola Paolucci]() for his cfg project and [article]() on Atlassian tutorials
-  - [StreakyCobra]() for describing his setup on Hacker News
-
-[GitHub Dotfiles]: https://dotfiles.github.io/                     
-[Nicola Paolucci]: https://bitbucket.org/durdn/cfg/src/master/     
-[tutorial]: https://www.atlassian.com/git/tutorials/dotfiles
-[StreakyCobra]: https://news.ycombinator.com/item?id=11071754
-[article]: https://www.atlassian.com/git/tutorials/dotfiles
+  - [GitHub Dotfiles](https://dotfiles.github.io/) for introducing the concept of managed dotfiles
+  - Nicola Paolucci for his [cfg project](https://bitbucket.org/durdn/cfg/src/master/) and [tutorial](https://www.atlassian.com/git/tutorials/dotfiles)
+  - StreakyCobra for sharing the concept in a Hacker News [post](https://news.ycombinator.com/item?id=11071754)
