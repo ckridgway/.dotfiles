@@ -1,12 +1,12 @@
 # See .zshenv for zsh startup order information.
-typeset -U path
+
+# Set PATH, MANPATH, etc., for Hombrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+typeset -aU path
 
 path=(
 	$HOME/bin
-	$HOME/anaconda/bin
-	/usr/local/bin
-	/usr/local/sbin
-	/usr/local/share/npm/bin
 	$path[@]
 	)
 

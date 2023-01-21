@@ -17,5 +17,5 @@
 # 
 # .zlogin - set the terminal type and run commands
 
-export WORKON_HOME=$HOME/.virtualenvs
+#export WORKON_HOME=$HOME/.virtualenvs
 #export VIRTUAL_ENV_DISABLE_PROMPT=true

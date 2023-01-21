@@ -1,5 +1,10 @@
-source /usr/local/share/antigen/antigen.zsh
+# zsh-compleions
+FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+autoload -Uz compinit
+compinit
 
+# antigen
+source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
@@ -37,7 +42,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
     git 
-    mercurial
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
