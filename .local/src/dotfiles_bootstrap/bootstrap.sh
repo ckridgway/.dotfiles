@@ -63,6 +63,17 @@ BACKUP_DIR=$HOME/.dotfiles_backup/$(date +%F+%T)
 mkdir -p $BACKUP_DIR || exit -2
 
 #------------------------------------------------------------------------------
+# Make .local directories
+#------------------------------------------------------------------------------
+mkdir -p $HOME/.local/src
+mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/share
+mkdir -p $HOME/.local/state
+mkdir -p $HOME/.local/etc
+mkdir -p $HOME/.local/lib
+mkdir -p $HOME/.local/include
+
+#------------------------------------------------------------------------------
 # Clone dotfiles
 #------------------------------------------------------------------------------
 git clone --bare git@github.com:ckridgway/.dotfiles.git $HOME/.dotfiles
@@ -83,8 +94,8 @@ config config status.showUntrackedFiles no
 #------------------------------------------------------------------------------
 # Install topical packages
 #------------------------------------------------------------------------------
-PKGS1=$(find $HOME/.dotfiles_bootstrap -name "install-$OS_SUFFIX.sh")
-PKGS2=$(find $HOME/.dotfiles_bootstrap -name "install.sh")
+PKGS1=$(find $HOME/.local/src/dotfiles_bootstrap -name "install-$OS_SUFFIX.sh")
+PKGS2=$(find $HOME/.local/src/dotfiles_bootstrap -name "install.sh")
 
 for x in $PKGS1 $PKGS2
 do  

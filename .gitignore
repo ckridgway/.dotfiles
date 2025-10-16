@@ -1,3 +1,5 @@
-*~
-backup/*
+.dotfiles_backup
 .DS_Store
+backup
+*~
+*.lock

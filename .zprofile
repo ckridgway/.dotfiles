@@ -7,12 +7,10 @@ typeset -aU path
 
 path=(
 	$HOME/bin
+	$HOME/.local/bin
 	$path[@]
+	$HOME/.lmstudio/bin
 	)
-
-	
-# source /Users/ckridgway/anaconda/bin/virtualenvwrapper.sh
-
 
 # Setup pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv

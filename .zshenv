@@ -17,5 +17,7 @@
 # 
 # .zlogin - set the terminal type and run commands
 
-#export WORKON_HOME=$HOME/.virtualenvs
-#export VIRTUAL_ENV_DISABLE_PROMPT=true
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+[ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
+
